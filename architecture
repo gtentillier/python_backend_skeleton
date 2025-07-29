@@ -1,0 +1,27 @@
+├── .github
+│   └── copilot-instructions.md
+├── .vscode
+│   ├── launch.json
+│   ├── settings.json
+│   └── tasks.json
+├── data
+├── docker
+├── docs
+├── notebooks
+├── src
+│   ├── api
+│   │   └── v1
+│   ├── core
+│   ├── db
+│   ├── models
+│   ├── repository
+│   ├── services
+│   └── utils
+│       └── misc
+├── tests
+├── .env
+├── .gitignore
+├── LICENCE
+├── README.md
+├── architecture
+└── requirements.txt

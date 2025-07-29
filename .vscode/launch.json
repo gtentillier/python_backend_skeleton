@@ -1,0 +1,20 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    // {
+    //   "type": "debugpy",
+    //   "request": "launch",
+    //   "name": "Launch FastAPI App (src/main.py)",
+    //   "program": "${workspaceFolder}/src/main.py",
+    //   "console": "integratedTerminal",
+    //   "envFile": "${workspaceFolder}/.env"
+    // },
+    {
+      "type": "debugpy",
+      "request": "launch",
+      "name": "Launch current Script",
+      "program": "${file}",
+      "console": "integratedTerminal"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Créer venv",
+      "type": "shell",
+      "command": "powershell",
+      "args": ["python -m venv .venv"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Installer requirements",
+      "type": "shell",
+      "command": "${config:python.defaultInterpreterPath}",
+      "args": ["-m", "pip", "install", "-r", "requirements.txt"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Générer requirements.txt",
+      "type": "shell",
+      "command": "${config:python.defaultInterpreterPath} -m pip freeze > requirements.txt",
+      "problemMatcher": []
+    },
+    {
+      "label": "Stage, Commit and Push",
+      "type": "shell",
+      "command": "powershell",
+      "args": ["git add -A; git commit -m 'Auto commit'; git push"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Sauvegarder l'Architecture du projet",
+      "type": "shell",
+      "command": "${config:python.defaultInterpreterPath}",
+      "args": ["src/utils/misc/get_archi.py"],
+      "problemMatcher": []
+    }
+  ]
+}
