@@ -63,6 +63,8 @@
 
 ```
 ├── .github
+│   ├── chatmodes
+│   │   └── empty.chatmode.md
 │   └── copilot-instructions.md
 ├── .vscode
 │   ├── launch.json
@@ -83,9 +85,10 @@
 │   └── utils
 │       └── misc
 ├── tests
-├── .env
+├── .env.example
 ├── .gitignore
 ├── LICENCE
 ├── README.md
+├── architecture
 └── requirements.txt
 ```

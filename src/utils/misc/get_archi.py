@@ -1,6 +1,10 @@
 import os
 from typing import List
 
+folder_to_exclude = ['.venv', '.git']
+file_ext_to_exclude = ['.py', '.md', '.txt']
+files_to_keep = ['README.md', 'copilot-instructions.md', 'empty.chatmode.md', 'requirements.txt']
+
 #!/usr/bin/env python3
 """
 Module to save the project architecture (file and folder tree) in a .txt file,
@@ -14,7 +18,9 @@ Usage:
 
 def ignore_file(file_name: str) -> bool:
   """Check if a file should be ignored based on its name."""
-  return (file_name.endswith(".md") and file_name not in ["README.md", "copilot-instructions.md"]) or file_name.endswith(".py") or (file_name.endswith(".txt") and file_name != "requirements.txt")
+  if file_name in files_to_keep:
+    return False
+  return (file_name.endswith(tuple(file_ext_to_exclude)))
 
 
 def generate_architecture(root_dir: str, output_file: str) -> None:
@@ -40,7 +46,7 @@ def generate_architecture(root_dir: str, output_file: str) -> None:
     for entry in sorted(entries):
       full_path = os.path.join(current_dir, entry)
       if os.path.isdir(full_path):
-        if entry == '.venv':
+        if entry in folder_to_exclude:
           continue
         directories.append(entry)
       else:
