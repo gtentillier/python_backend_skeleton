@@ -1,3 +1,14 @@
+# Faire pointer git vers le repo souhaité
+
+```bash
+git remote remove origin
+git remote add origin https://github.com/ton-user/nouveau-depot.git
+git branch -m main
+git add .
+git commit -m 'Initial commit'
+git push -u origin main
+```
+
 # Installation de l'environnement Python
 
 - Ctrl+T -> Créer venv
