@@ -3,7 +3,6 @@
   "python.terminal.activateEnvironment": true,
   "files.exclude": {
     ".venv": true
-  },
+  }
   // "python.analysis.extraPaths": [],
-  "python.analysis.typeCheckingMode": "strict"
 }
