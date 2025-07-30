@@ -9,12 +9,12 @@
 
 - Python :
 
-  - Indentation à 2 espaces, imports triés, pas de wildcard imports.
-  - Docstrings au format **Google**.
-  - Typing strict, usage de `Optional[...]` plutôt que `None`.
+  - Pas de wildcard imports.
+  - Docstrings au format **Google** pour les fonctions complexes.
+  - Typing strict pour les variables et arguments de fonctions, usage de `Optional[...]` plutôt que `None`.
   - Utilisation de **f-strings** pour les chaînes formatées.
-  - Pas de variables globales.
-  - code modulable et évolutif.
+  - Pas de "magic value" ni de variables globales.
+  - La logique du code doit être modulable et évolutive.
 
 - FastAPI :
   - Routes organisées par **routers** dans `src/api/v1`.
@@ -30,13 +30,11 @@
 ## 4. Infrastructure & CI/CD
 
 - Docker : chacun des services a un `Dockerfile` minimal mais optimisé.
-- Docker Compose pour orchestrer les services (backend, base de données, etc.).
 - Base de données : PostgreSQL, avec connexion via SQLAlchemy.
-- Environnement de développement : `.env`, avec un exemple `.env.example`.
-- Versioning via GitHub.
-- GitHub Actions :
+- Environnement de développement : `.env`.
+- Versioning via GitHub, et CI/CD avec les GitHub Actions :
   - CI doit toujours faire `pytest`.
-  - Deployment : staging sur `main`, prod sur `release/*`.
+  - Deployment : staging sur `main`, prod sur `prod`.
 
 ## 5. Architecture & modularité
 
