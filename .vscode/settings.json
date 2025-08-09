@@ -4,7 +4,9 @@
   "python.terminal.activateEnvironment": true,
   "files.exclude": {
     ".venv": true,
-    "src/default_project_name.egg-info": true
+    "src/default_project_name.egg-info": true,
+    "LICENCE": true,
+    "setup.py": true
   }
   // "python.analysis.extraPaths": [],
 }
