@@ -29,7 +29,13 @@
     {
       "label": "Sauvegarder l'Architecture du projet",
       "type": "shell",
-      "command": "${config:python.defaultInterpreterPath} src/utils/misc/get_archi.py",
+      "command": "${config:python.defaultInterpreterPath} src/utils/misc/get_architecture.py",
+      "problemMatcher": []
+    },
+    {
+      "label": "Setup Python",
+      "type": "shell",
+      "command": "${config:python.defaultInterpreterPath} -m pip install -e .",
       "problemMatcher": []
     }
   ]

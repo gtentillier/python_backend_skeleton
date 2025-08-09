@@ -3,7 +3,8 @@
   // "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
   "python.terminal.activateEnvironment": true,
   "files.exclude": {
-    // ".venv": true
+    ".venv": true,
+    "src/default_project_name.egg-info": true
   }
   // "python.analysis.extraPaths": [],
 }

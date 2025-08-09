@@ -1,15 +1,6 @@
-├── .github
-│   ├── chatmodes
-│   │   └── empty.chatmode.md
-│   └── copilot-instructions.md
-├── .vscode
-│   ├── launch.json
-│   ├── settings.json
-│   └── tasks.json
 ├── data
 ├── docker
 ├── docs
-├── notebooks
 ├── src
 │   ├── api
 │   │   └── v1
@@ -20,10 +11,6 @@
 │   ├── services
 │   └── utils
 │       └── misc
-├── tests
-├── .env.example
+├── .env
 ├── .gitignore
-├── LICENCE
-├── README.md
-├── architecture
 └── requirements.txt

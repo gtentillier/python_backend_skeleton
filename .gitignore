@@ -1,3 +1,9 @@
 .venv/
 .env
 *.ipynb
+*.DS_Store
+__pycache__/
+default_project_name.egg-info/
+
+!import.ipynb
+.github/instructions_supplémentaires.md
