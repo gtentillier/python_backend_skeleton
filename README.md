@@ -1,8 +1,9 @@
 # Faire pointer git vers le repo souhaité
 
 ```bash
+git clone https://github.com/gtentillier/python_backend_skeleton.git .
 git remote remove origin
-git remote add origin https://github.com/ton-user/nouveau-depot.git
+git remote add origin https://github.com/gtentillier/nouveau-depot.git
 git branch -m main
 git add .
 git commit -m 'Initial commit'
