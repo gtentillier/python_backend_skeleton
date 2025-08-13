@@ -3,14 +3,20 @@
 ├── docs
 ├── src
 │   ├── api
-│   │   └── v1
-│   ├── core
+│   │   └── users.py
 │   ├── db
-│   ├── models
-│   ├── repository
-│   ├── services
+│   │   └── session.py
+│   ├── modules
+│   │   ├── core
+│   │   │   ├── config.py
+│   │   │   └── security.py
+│   │   ├── module_1
+│   │   ├── module_2
+│   │   └── shared
 │   └── utils
-│       └── misc
+│       ├── get_architecture.py
+│       └── get_paths.py
 ├── .env
 ├── .gitignore
-└── requirements.txt
+├── requirements.txt
+└── setup.py

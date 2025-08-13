@@ -14,7 +14,7 @@ folder_to_exclude = [
 ]
 
 file_end_to_exclude = [
-    '.py',
+    '__init__.py',
     '.md',
     '.txt',
     'architecture',

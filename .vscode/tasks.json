@@ -29,7 +29,7 @@
     {
       "label": "Sauvegarder l'Architecture du projet",
       "type": "shell",
-      "command": "${config:python.defaultInterpreterPath} src/utils/misc/get_architecture.py",
+      "command": "${config:python.defaultInterpreterPath} src/utils/get_architecture.py",
       "problemMatcher": []
     },
     {
