@@ -8,6 +8,7 @@ git branch -m main
 git add .
 git commit -m 'Initial commit'
 git push -u origin main
+git update-index --skip-worktree .env
 ```
 
 # Installation de l'environnement Python
@@ -20,7 +21,7 @@ git push -u origin main
 
 # Installation des Dépendances
 
-Au démarrage du projet, exécutez les commandes suivantes pour installer les dépendances nécessaires :
+Au démarrage du projet, exécutez des commandes d'installation de dépendances telles que :
 
 ```bash
 pip install sqlalchemy asyncpg psycopg2-binary
