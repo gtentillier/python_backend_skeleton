@@ -1,7 +1,7 @@
-import os
+from pathlib import Path
 from typing import Optional
 
-path_project = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
+path_project = (Path(__file__).resolve().parents[2])
 
 
 def path_data(filename: Optional[str] = None) -> str:
@@ -12,9 +12,9 @@ def path_data(filename: Optional[str] = None) -> str:
         str: The full path to the data directory or the specified file within it.
     """
     if filename is None:
-        return os.path.join(path_project, 'data')
+        return path_project / 'data'
     else:
-        return os.path.join(path_project, 'data', filename)
+        return path_project / 'data' / filename
 
 
 __all__ = ["path_project", "path_data"]
