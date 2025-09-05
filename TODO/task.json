@@ -1,0 +1,14 @@
+{
+  "label": "Increment Markdown Headers",
+  "type": "shell",
+  "command": "python",
+  "args": ["${workspaceFolder}/increment_headers.py", "${file}"],
+  "group": "none",
+  "presentation": {
+    "echo": true,
+    "reveal": "always",
+    "focus": false,
+    "panel": "shared"
+  },
+  "problemMatcher": []
+}
