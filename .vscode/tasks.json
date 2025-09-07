@@ -2,6 +2,12 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "Stage, Commit and Push",
+      "type": "shell",
+      "command": "git add -A && git commit -m 'auto-commit' && git push",
+      "problemMatcher": []
+    },
+    {
       "label": "Créer venv",
       "type": "shell",
       "command": "python3 -m venv .venv",
@@ -9,33 +15,21 @@
       "problemMatcher": []
     },
     {
-    "label": "Installer requirements",
-    "type": "shell",
-    "command": "${config:python.defaultInterpreterPath} -m pip install -r requirements.txt",
-    "problemMatcher": []
-    },
-    {
-      "label": "Générer requirements.txt",
+      "label": "Update l'Architecture du projet",
       "type": "shell",
-      "command": "${config:python.defaultInterpreterPath} -m pip freeze > requirements.txt",
-      "problemMatcher": []
-    },
-    {
-      "label": "Stage, Commit and Push",
-      "type": "shell",
-      "command": "git add -A && git commit -m 'Auto commit' && git push",
-      "problemMatcher": []
-    },
-    {
-      "label": "Sauvegarder l'Architecture du projet",
-      "type": "shell",
-      "command": "${config:python.defaultInterpreterPath} src/utils/get_architecture.py",
+      "command": "${config:python.defaultInterpreterPath} src/tasks/_architecture.py",
       "problemMatcher": []
     },
     {
       "label": "Setup Python",
       "type": "shell",
-      "command": "${config:python.defaultInterpreterPath} -m pip install -e .",
+      "command": "${config:python.defaultInterpreterPath} -m pip install -r requirements.txt && ${config:python.defaultInterpreterPath} -m pip install -e .",
+      "problemMatcher": []
+    },
+    {
+      "label": "Increment Markdown headers",
+      "type": "shell",
+      "command": "${config:python.defaultInterpreterPath} src/tasks/_increment_md_headers.py \"${file}\"",
       "problemMatcher": []
     }
   ]
