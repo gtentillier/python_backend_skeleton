@@ -34,9 +34,10 @@
 │   │   ├── module_1
 │   │   ├── module_2
 │   │   └── shared
+│   ├── tasks
+│   │   ├── _architecture.py
+│   │   └── _increment_md_headers.py
 │   └── utils
-│       ├── get_architecture.py
-│       └── get_paths.py
 ├── .env
 ├── .gitignore
 ├── requirements.txt

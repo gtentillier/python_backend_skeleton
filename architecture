@@ -15,7 +15,7 @@
 │   │   └── shared
 │   ├── tasks
 │   │   ├── _architecture.py
-│   │   └── _increment_md_titles.py
+│   │   └── _increment_md_headers.py
 │   └── utils
 ├── .env
 ├── .gitignore

@@ -10,7 +10,7 @@
     {
       "label": "Créer venv",
       "type": "shell",
-      "command": "python3 -m venv .venv",
+      "command": "/usr/local/bin/python3 -m venv .venv",
       "args": [],
       "problemMatcher": []
     },
