@@ -1,6 +1,5 @@
 # Dossiers/fichiers
 .venv/
-.env
 __pycache__/
 default_project_name.egg-info/
 
