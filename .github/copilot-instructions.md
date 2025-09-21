@@ -14,6 +14,11 @@
   - La logique du code doit être modulable et évolutive.
   - Fais des commentaires concis lorsque la logique du code n'est pas évidente.
   - Utilise des docstrings au format Google pour les fonctions et classes.
+  - Pour la gestion de données tabulaires, usage de `pandas` :
+    - `pd.DataFrame()` pour créer des DataFrames.
+    - `df.to_csv(file_path, index=False)` pour sauvegarder un DataFrame en CSV.
+    - `pd.read_csv(file_path)` pour lire un CSV dans un DataFrame.
+    - etc.
   - Pour les chemins de fichiers/dossiers : usage de `pathlib` :
     - avec `from shared_utils import path_data, path_project` on récupère les variables `path_data` et `path_project` pour accéder aux dossiers data et racine du projet, qu'on utilise ensuite systématiquement pour indiquer des chemins vers des fichiers du projet. exemple : `file_path = path_data / "subfolder" / "file.txt"`.
     - `pathlib.Path.mkdir(parents=True, exist_ok=True)` pour créer des dossiers.
