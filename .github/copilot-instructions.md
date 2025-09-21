@@ -9,12 +9,16 @@
 ## 2. Normes de code et style
 
   - Typing strict pour les variables, arguments et résultats de fonctions, usage de `Optional[...]` plutôt que `None`.
-  - Pour les chemins de fichiers/dossiers : usage de `pathlib`
   - Utilisation de **f-strings** pour les chaînes formatées.
   - Pas de "magic value" ni de variables globales : on paramétrise toutes les variables.
   - La logique du code doit être modulable et évolutive.
   - Fais des commentaires concis lorsque la logique du code n'est pas évidente.
   - Utilise des docstrings au format Google pour les fonctions et classes.
+  - Pour les chemins de fichiers/dossiers : usage de `pathlib` :
+    - avec `from shared_utils import path_data, path_project` on récupère les variables `path_data` et `path_project` pour accéder aux dossiers data et racine du projet, qu'on utilise ensuite systématiquement pour indiquer des chemins vers des fichiers du projet. exemple : `file_path = path_data / "subfolder" / "file.txt"`.
+    - `pathlib.Path.mkdir(parents=True, exist_ok=True)` pour créer des dossiers.
+    - `pathlib.Path.exists()` pour vérifier l'existence d'un fichier/dossier.
+    - `pathlib.Path.read_text(encoding="utf-8")` et `pathlib.Path.write_text(data, encoding="utf-8")` pour lire/écrire des fichiers texte.
 
 ## 3. Architecture du projet :
 
