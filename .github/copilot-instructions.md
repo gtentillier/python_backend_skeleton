@@ -59,3 +59,4 @@ Pour le mode agent :
 - si tu dois exécuter un script python, utilise l'interpreteur python du projet, c'est à dire `.venv/bin/python3`
 - pour les imports python, ne mets jamais de blocs try except, installe les dépendances manquantes dans l'environnement virtuel, puis suppose dans les fichiers qu'ils sont disponibles.
 - Utilise les implémentations déjà existantes des fonctions/utilitaires du projet, même si elles sont dans des modules externes (exemple : Levenshtein.distance).
+- Vas toujours à l'essentiel dans le code, de la manière la plus simple et concise possible, sans sacrifier la logique du code.
