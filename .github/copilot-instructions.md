@@ -63,3 +63,4 @@ Pour le mode agent :
 - Vas toujours à l'essentiel dans le code, de la manière la plus simple et concise possible, sans sacrifier la logique du code.
 - Développe les modules python dans des fichiers avec des noms explicites, et importe ces fonctions via un fichier `__init__.py` dans le dossier du module.
 - Ajoute toujours à la fin des scripts python un bloc `if __name__ == "__main__":` pour permettre l'exécution directe du script avec un test rapide. Il faut que le contenu de ce bloc soit minimaliste, que tous les traitements soient présents dans les fonctions du fichier.
+- réserve les blocs try except aux endroits où une erreur est possible, pour gérer des exceptions qui surviendront, mais pas au cas où pour des erreurs qu'on n'est pas censé rencontrer dans le cadre normal du programme.
