@@ -10,6 +10,7 @@
 
   - Typing strict pour les variables, arguments et résultats de fonctions, usage de `Optional[...]` plutôt que `None`.
   - Utilisation de **f-strings** pour les chaînes formatées.
+  - Utilisation de time.perf_counter() pour mesurer les performances et les durées d'exécution de lignes de code.
   - Pas de "magic value" ni de variables globales : on paramétrise toutes les variables.
   - La logique du code doit être modulable et évolutive.
   - Fais des commentaires concis lorsque la logique du code n'est pas évidente.
