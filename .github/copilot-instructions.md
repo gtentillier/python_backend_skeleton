@@ -60,3 +60,4 @@ Pour le mode agent :
 - pour les imports python, ne mets jamais de blocs try except, installe les dépendances manquantes dans l'environnement virtuel, puis suppose dans les fichiers qu'ils sont disponibles.
 - Utilise les implémentations déjà existantes des fonctions/utilitaires du projet, même si elles sont dans des modules externes (exemple : Levenshtein.distance).
 - Vas toujours à l'essentiel dans le code, de la manière la plus simple et concise possible, sans sacrifier la logique du code.
+- Ajoute toujours à la fin des scripts python un bloc `if __name__ == "__main__":` pour permettre l'exécution directe du script avec un test rapide. Il faut que le contenu de ce bloc soit minimaliste, que tous les traitements soient présents dans les fonctions du fichier.
