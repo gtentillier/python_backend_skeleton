@@ -26,6 +26,32 @@
     - `pathlib.Path.mkdir(parents=True, exist_ok=True)` pour créer des dossiers.
     - `pathlib.Path.exists()` pour vérifier l'existence d'un fichier/dossier.
     - `pathlib.Path.read_text(encoding="utf-8")` et `pathlib.Path.write_text(data, encoding="utf-8")` pour lire/écrire des fichiers texte.
+  - Utilisation de `@dataclass` et `__post_init__`
+    - Quand tu définis des classes, **utilise le décorateur `@dataclass`**.
+    - * Utilise `@dataclass` pour éviter d’écrire manuellement les méthodes `__init__`, `__repr__`, et `__eq__`.
+    - * Si une logique doit être exécutée après l’initialisation (par exemple validation, calcul de champs dérivés, transformation de valeurs), place-la dans une méthode `__post_init__(self)` plutôt que de redéfinir `__init__`.
+    - * Ne redéfinis `__init__` **que si c’est strictement nécessaire** (ex. initialisation conditionnelle complexe non compatible avec `__post_init__`).
+    - * Préfère l’utilisation de `field(default=...)` ou `field(default_factory=...)` pour les valeurs par défaut dynamiques.
+    - * Si une propriété ne doit pas être initialisée via le constructeur, définis-la avec `init=False` et initialise-la dans `__post_init__`.
+    - * Garde les classes **lisibles, déclaratives et auto-documentées** : privilégie des annotations de type claires et des noms de champs explicites.
+
+    **Exemple attendu :**
+
+    ```python
+    from dataclasses import dataclass, field
+
+    @dataclass
+    class Produit:
+        nom: str
+        prix_unitaire: float
+        quantite: int = 1
+        total: float = field(init=False)
+
+        def __post_init__(self):
+            if self.prix_unitaire < 0:
+                raise ValueError("Le prix ne peut pas être négatif.")
+            self.total = self.prix_unitaire * self.quantite
+    ```
 
 ## 3. Architecture du projet :
 
