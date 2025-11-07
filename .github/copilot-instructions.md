@@ -16,6 +16,7 @@
   - La logique du code doit être modulable et évolutive.
   - Fais des commentaires concis lorsque la logique du code n'est pas évidente.
   - Utilise des docstrings au format Google pour les fonctions et classes.
+  - Ne fais pas de tests unitaires.
   - Pour la gestion de données tabulaires, usage de `pandas` :
     - `pd.DataFrame()` pour créer des DataFrames.
     - `df.to_csv(file_path, index=False)` pour sauvegarder un DataFrame en CSV.
