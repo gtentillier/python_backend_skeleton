@@ -5,10 +5,11 @@
 - C’est un projet **Python 3.13.6** backend, l'environnement virtuel python utilisé est **.venv**.
 - la variable `path_project` permet d'obtenir le chemin absolu du projet.
 - la fonction `path_data(filename)` permet d'obtenir le chemin absolu du dossier 'data', en ajoutant le nom de fichier spécifié.
+- Utilise l'environnementy virtuel situé à la racine du projet : `.venv/bin/python3`.
 
 ## 2. Normes de code et style
 
-  - Typing strict pour les variables, arguments et résultats de fonctions, usage de `Optional[...]` plutôt que `None`.
+  - Typing strict pour les variables, arguments et résultats de fonctions, usage de '|' : `class_1 | class_2 | None` par exemple plutôt que `Optional[...]`.
   - Ne garde pas d'imports inutilisés.
   - Utilisation de **f-strings** pour les chaînes formatées.
   - Utilisation de time.perf_counter() pour mesurer les performances et les durées d'exécution de lignes de code.
