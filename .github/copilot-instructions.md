@@ -36,6 +36,7 @@
     - * Préfère l’utilisation de `field(default=...)` ou `field(default_factory=...)` pour les valeurs par défaut dynamiques.
     - * Si une propriété ne doit pas être initialisée via le constructeur, définis-la avec `init=False` et initialise-la dans `__post_init__`.
     - * Garde les classes **lisibles, déclaratives et auto-documentées** : privilégie des annotations de type claires et des noms de champs explicites.
+    - Pour définir le device pytorch utilisé, utilise `device = torch.device("cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu")`.
 
     **Exemple attendu :**
 
