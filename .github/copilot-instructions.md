@@ -18,16 +18,21 @@
   - Fais des commentaires concis lorsque la logique du code n'est pas évidente.
   - Utilise des docstrings au format Google pour les fonctions et classes.
   - Ne fais pas de tests unitaires.
+
   - Pour la gestion de données tabulaires, usage de `pandas` :
     - `pd.DataFrame()` pour créer des DataFrames.
     - `df.to_csv(file_path, index=False)` pour sauvegarder un DataFrame en CSV.
     - `pd.read_csv(file_path)` pour lire un CSV dans un DataFrame.
     - etc.
+
   - Pour les chemins de fichiers/dossiers : usage de `pathlib` :
     - avec `from shared_utils import path_data, path_project` on récupère les variables `path_data` et `path_project` pour accéder aux dossiers data et racine du projet, qu'on utilise ensuite systématiquement pour indiquer des chemins vers des fichiers du projet. exemple : `file_path = path_data / "subfolder" / "file.txt"`.
     - `pathlib.Path.mkdir(parents=True, exist_ok=True)` pour créer des dossiers.
     - `pathlib.Path.exists()` pour vérifier l'existence d'un fichier/dossier.
     - `pathlib.Path.read_text(encoding="utf-8")` et `pathlib.Path.write_text(data, encoding="utf-8")` pour lire/écrire des fichiers texte.
+
+  - Pour définir le device pytorch utilisé, utilise `device = torch.device("cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu")`.
+
   - Utilisation de `@dataclass` et `__post_init__`
     - Quand tu définis des classes, **utilise le décorateur `@dataclass`**.
     - * Utilise `@dataclass` pour éviter d’écrire manuellement les méthodes `__init__`, `__repr__`, et `__eq__`.
@@ -36,7 +41,6 @@
     - * Préfère l’utilisation de `field(default=...)` ou `field(default_factory=...)` pour les valeurs par défaut dynamiques.
     - * Si une propriété ne doit pas être initialisée via le constructeur, définis-la avec `init=False` et initialise-la dans `__post_init__`.
     - * Garde les classes **lisibles, déclaratives et auto-documentées** : privilégie des annotations de type claires et des noms de champs explicites.
-    - Pour définir le device pytorch utilisé, utilise `device = torch.device("cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu")`.
 
     **Exemple attendu :**
 
