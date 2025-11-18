@@ -77,11 +77,12 @@
   ```python
   from shared_utils import OpenAILLMCaller, PricingCalculator
 
-  def requete_openai(prompt: str, api_key: str) -> str:
+  def requete_openai(prompt: str, api_key: str, verbose: bool = False) -> str:
       caller = OpenAILLMCaller(api_key=api_key)
       response = caller.response(model="gpt-4.1-nano", input=prompt, max_output_tokens=128)
-      prix = PricingCalculator().get_price(response, service_tier="standard")
-      prix.display()
+      if verbose:
+        prix = PricingCalculator().get_price(response, stt_model_name=None)
+        prix.display()
       return response.output_text
   ```
 
