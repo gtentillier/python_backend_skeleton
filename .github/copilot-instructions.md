@@ -60,6 +60,30 @@
             self.total = self.prix_unitaire * self.quantite
     ```
 
+  - Pour mesurer la durée d'exécution d'une brique de code, utilise le décorateur de fonction `measure_time`. L'import se fait comme ceci : `from shared_utils import measure_time`. `measure_time` se place directement au-dessus de la fonction concernée, calcule la durée avec `time.perf_counter()`, et affiche le résultat formaté : 
+
+  ```python
+  from shared_utils import measure_time
+
+  @measure_time
+  def traitement_principal() -> None:
+      # ...logic...
+      pass
+  ```
+
+  - pour un appel OpenAI, importe `OpenAILLMCaller` ou `OpenAISTTCaller`, et `PricingCalculator` et logue toujours `price.display()`. L'import est le suivant : `from shared_utils import OpenAILLMCaller, OpenAISTTCaller, PricingCalculator`. Les prix peuvent être ajoutés natuerellement entre eux pour garder un suivi des prix d'un enchaînement de requêtes. l’exemple suivant montre la requête, le calcul de coût et l’affichage du prix de la réponse :
+
+  ```python
+  from shared_utils import OpenAILLMCaller, PricingCalculator
+
+  def requete_openai(prompt: str, api_key: str) -> str:
+      caller = OpenAILLMCaller(api_key=api_key)
+      response = caller.response(model="gpt-4.1-nano", input=prompt, max_output_tokens=128)
+      prix = PricingCalculator().get_price(response, service_tier="standard")
+      prix.display()
+      return response.output_text
+  ```
+
 ## 3. Architecture du projet :
 
 ```
