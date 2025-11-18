@@ -1,6 +1,5 @@
 import re
 from pathlib import Path
-from typing import Optional
 
 
 def increment_headers_in_text(content: str, shift: int = 1) -> str:

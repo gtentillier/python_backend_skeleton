@@ -1,9 +1,8 @@
 from pathlib import Path
-from typing import List, Union
 
 keep_project_root: bool = False  # Set to True if you want to keep the project root in the architecture output
 
-folder_to_exclude: List[str] = [
+folder_to_exclude: list[str] = [
     ".venv",
     ".git",
     ".github",
@@ -13,7 +12,7 @@ folder_to_exclude: List[str] = [
     "__pycache__",
 ]
 
-file_end_to_exclude: List[str] = [
+file_end_to_exclude: list[str] = [
     "__init__.py",
     ".md",
     ".txt",
@@ -23,14 +22,14 @@ file_end_to_exclude: List[str] = [
     ".DS_Store",
 ]
 
-files_to_keep: List[str] = [
+files_to_keep: list[str] = [
     "copilot-instructions.md",
     "empty.chatmode.md",
     "requirements.txt",
     ".gitignore",
 ]
 
-folder_to_exclude_inner: List[str] = []
+folder_to_exclude_inner: list[str] = []
 
 
 def ignore_file(file_name: str) -> bool:
@@ -47,17 +46,17 @@ def ignore_file(file_name: str) -> bool:
     return file_name.endswith(tuple(file_end_to_exclude))
 
 
-def generate_architecture_lines(root_dir: Union[str, Path]) -> List[str]:
+def generate_architecture_lines(root_dir: str | Path) -> list[str]:
     """Return a textual representation of the project structure as list of lines.
 
     Args:
         root_dir (Union[str, Path]): The root directory of the project.
 
     Returns:
-        List[str]: Lines representing the project tree.
+        list[str]: Lines representing the project tree.
     """
     root_path: Path = Path(root_dir)
-    tree_lines: List[str] = []
+    tree_lines: list[str] = []
 
     def recurse_dir(current_dir: Path, prefix: str = "") -> None:
         try:
@@ -66,8 +65,8 @@ def generate_architecture_lines(root_dir: Union[str, Path]) -> List[str]:
             tree_lines.append(f"{prefix}Error accessing {current_dir}: {e}")
             return
 
-        directories: List[Path] = []
-        files: List[Path] = []
+        directories: list[Path] = []
+        files: list[Path] = []
         for entry in entries:
             if entry.is_dir():
                 if entry.name in folder_to_exclude:
@@ -78,7 +77,7 @@ def generate_architecture_lines(root_dir: Union[str, Path]) -> List[str]:
                     continue
                 files.append(entry)
 
-        children: List[Path] = directories + files
+        children: list[Path] = directories + files
         count: int = len(children)
 
         for index, child in enumerate(children):
@@ -97,12 +96,12 @@ def generate_architecture_lines(root_dir: Union[str, Path]) -> List[str]:
     return tree_lines
 
 
-def write_architecture_file(output_file: Union[str, Path], tree_lines: List[str]) -> None:
+def write_architecture_file(output_file: str | Path, tree_lines: list[str]) -> None:
     """Write the architecture lines to a file.
 
     Args:
         output_file (Union[str, Path]): Destination file path.
-        tree_lines (List[str]): Lines to write.
+        tree_lines (list[str]): Lines to write.
     """
     output_path: Path = Path(output_file)
     try:
@@ -112,19 +111,22 @@ def write_architecture_file(output_file: Union[str, Path], tree_lines: List[str]
         print(f"Error writing to file {output_path}: {e}")
 
 
-def format_as_codeblock(tree_lines: List[str]) -> str:
+def format_as_codeblock(tree_lines: list[str]) -> str:
     """Return the tree lines wrapped in a fenced code block.
 
     Args:
-        tree_lines (List[str]): Lines to include inside the code block.
-
+        tree_lines (list[str]): Lines to include inside the code block.
     Returns:
         str: The fenced code block as a string.
     """
     return "```\n" + "\n".join(tree_lines) + "\n```"
 
 
-def replace_fenced_block_in_file(md_file: Union[str, Path], new_block: str, anchor_heading: Union[str, None] = None) -> bool:
+def replace_fenced_block_in_file(
+    md_file: str | Path,
+    new_block: str,
+    anchor_heading: str | None = None,
+) -> bool:
     """Replace the first fenced code block (or the first after an anchor) in a markdown file.
 
     Args:

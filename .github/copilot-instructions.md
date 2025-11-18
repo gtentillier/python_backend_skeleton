@@ -9,7 +9,8 @@
 
 ## 2. Normes de code et style
 
-  - Typing strict pour les variables, arguments et résultats de fonctions, usage de '|' : `class_1 | class_2 | None` par exemple plutôt que `Optional[...]`.
+  - Typing strict pour les variables, arguments et résultats de fonctions, usage de '|' : `class_1 | class_2 | None` par exemple plutôt que `Optional[...]`. Pour le typing des variables incluant des listes ou des dictionnaires, utilise `list[...]` et `dict[...]` plutôt que `List[...]` et `Dict[...]`.
+  - Ne mets pas de variables mutables en valeurs par défaut des arguments de fonctions (exemple : listes, dictionnaires, ensembles).
   - Ne garde pas d'imports inutilisés.
   - Utilisation de **f-strings** pour les chaînes formatées.
   - Utilisation de time.perf_counter() pour mesurer les performances et les durées d'exécution de lignes de code.
