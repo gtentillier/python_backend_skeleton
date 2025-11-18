@@ -3,8 +3,6 @@
 ## 1. Contexte général du projet
 
 - C’est un projet **Python 3.13.6** backend, l'environnement virtuel python utilisé est **.venv**.
-- la variable `path_project` permet d'obtenir le chemin absolu du projet.
-- la fonction `path_data(filename)` permet d'obtenir le chemin absolu du dossier 'data', en ajoutant le nom de fichier spécifié.
 - Utilise l'environnementy virtuel situé à la racine du projet : `.venv/bin/python3`.
 
 ## 2. Normes de code et style
